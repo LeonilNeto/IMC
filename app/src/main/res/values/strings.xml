@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">IMC</string>
     <string name="btn_Calcular">CALCULAR</string>
-    <string name="txt_altura">Informe a altura:</string>
+    <string name="txt_altura">INFORME A ALTURA:</string>
     <string name="txt_ex_altura">Exemplo: 1.60</string>
-    <string name="txt_peso">Informe o peso:</string>
+    <string name="txt_peso">INFORME O PESO:</string>
     <string name="txt_ex_peso">Exemplo: 60</string>
-    <string name="resultado">Resultado: </string>
+    <string name="resultado">RESULTADO:</string>
     <string name="valoresInvalidos">Valores Inválidos!</string>
 </resources>

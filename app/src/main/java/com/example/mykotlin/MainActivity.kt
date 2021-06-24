@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     val imc = calcIMC(altura, peso)
                     val df = DecimalFormat("#.00")
-                    val imcResp = "IMC: " + df.format(imc) + "\n" + checkIMC(imc)
+                    val imcResp = "IMC: " + df.format(imc) + " - " + checkIMC(imc).toUpperCase()
                     txtResultado.setText(imcResp)
                 }
             } catch (e: NumberFormatException) {

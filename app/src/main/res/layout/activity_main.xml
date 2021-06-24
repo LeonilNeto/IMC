@@ -34,6 +34,7 @@
             android:hint="@string/txt_ex_peso"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
+            android:maxLength="4"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -60,6 +61,7 @@
             android:hint="@string/txt_ex_altura"
             android:importantForAutofill="no"
             android:inputType="numberDecimal"
+            android:maxLength="4"
             android:textSize="20sp" />
     </LinearLayout>
 

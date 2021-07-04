@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity() {
                 val altura = edtAltura.text.toString().toDouble()
                 val peso = edtPeso.text.toString().toDouble()
                 if(altura  == 0.0 || peso == 0.0) {
-                    txtResultado.setText("Impossível divisão por zero! ")
+                    txtResultado.setText(R.string.impossivelDividirPorZero)
                 } else {
                     val imc = calcIMC(altura, peso)
                     val df = DecimalFormat("#.00")
-                    val imcResp = "IMC: " + df.format(imc) + " - " + checkIMC(imc).toUpperCase()
-                    txtResultado.setText(imcResp)
+                    val imcResp = "IMC: " + df.format(imc) + " - " + checkIMC(imc)
+                    txtResultado.text = imcResp
                 }
             } catch (e: NumberFormatException) {
                 txtResultado.setText(R.string.valoresInvalidos)
@@ -31,22 +31,24 @@ class MainActivity : AppCompatActivity() {
             it.hideKeyboard()
         }
     }
-        private fun calcIMC(altura: Double, peso: Double): Double = peso / (altura * altura)
 
-        private fun checkIMC(db: Double): String {
-            return when(db) {
-                in 0.0..17.0 -> "Muito abaixo do peso."
-                in 17.1..18.49 -> "Abaixo do peso."
-                in 18.5..24.99 -> "Peso normal."
-                in 25.0..29.99 -> "Acima do peso."
-                in 30.0..34.99 -> "Obesidade I."
-                in 35.0..39.99 -> "Obesidade II (severa)."
-                else -> "Obesidade III (mórbida)"
-            }
+    private fun calcIMC(altura: Double, peso: Double): Double = peso / (altura * altura)
+
+    private fun checkIMC(db: Double): String {
+        val array: Array<String> = resources.getStringArray(R.array.imc)
+        return when(db) {
+            in 0.0..17.0 -> array[0]
+            in 17.1..18.49 -> array[1]
+            in 18.5..24.99 -> array[2]
+            in 25.0..29.99 -> array[3]
+            in 30.0..34.99 -> array[4]
+            in 35.0..39.99 -> array[5]
+            else -> array[6]
         }
+    }
 
-        fun View.hideKeyboard() {
-            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    private fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(windowToken, 0)
-        }
+    }
 }

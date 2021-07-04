@@ -7,4 +7,14 @@
     <string name="txt_ex_peso">Exemplo: 60</string>
     <string name="resultado">RESULTADO:</string>
     <string name="valoresInvalidos">Valores Inválidos!</string>
+    <string name="impossivelDividirPorZero">Impossível divisão por zero!</string>
+    <string-array name="imc">
+        <item>Muito abaixo do peso.</item>
+        <item>Abaixo do peso.</item>
+        <item>Peso normal.</item>
+        <item>Acima do peso.</item>
+        <item>Obesidade I.</item>
+        <item>Obesidade II (severa).</item>
+        <item>Obesidade III (mórbida)</item>
+    </string-array>
 </resources>

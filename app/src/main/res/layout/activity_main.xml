@@ -1,79 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
+    android:layout_margin="20dp"
     android:gravity="center"
     tools:context=".MainActivity">
 
-
-    <LinearLayout
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+    <TextView
+        android:id="@+id/txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/txt_peso"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/edtPeso"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/LnLEntradaDeDados">
+        app:layout_constraintVertical_bias="0.367" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_peso"
-            android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/edtPeso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/txt_ex_peso"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:maxLength="4"
-            android:textSize="20sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+    <EditText
+        android:id="@+id/edtPeso"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="@string/txt_ex_peso"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxLength="4"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtPeso"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/txt_altura"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalcular"
+        app:layout_constraintEnd_toStartOf="@+id/edtAltura"
         app:layout_constraintStart_toStartOf="parent"
-        style="@style/LnLEntradaDeDados">
+        app:layout_constraintTop_toBottomOf="@+id/edtPeso"
+        app:layout_constraintVertical_bias="0.296" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_altura"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/edtAltura"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/txt_ex_altura"
-            android:importantForAutofill="no"
-            android:inputType="numberDecimal"
-            android:maxLength="4"
-            android:textSize="20sp" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/edtAltura"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:ems="10"
+        android:hint="@string/txt_ex_altura"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:maxLength="4"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2" />
 
     <Button
         android:id="@+id/btnCalcular"
+        style="@style/BtnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
         android:text="@string/btn_Calcular"
-        android:layout_marginTop="20dp"
-        style="@style/BtnCalcular" />
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAltura"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtResultado"
+        style="@style/TxtResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/resultado"
-        style="@style/TxtResultado" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcular" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
